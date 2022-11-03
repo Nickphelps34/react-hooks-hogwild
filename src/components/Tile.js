@@ -1,26 +1,20 @@
 import Details from "./Details"
+import {useState} from "react"
 
 function Tile ({name, image, specialty, weight, greased, HMA}) {
+    const [HogDetails, setHogDetails] = useState(false)
+    
     const handleClick = () => {
-        console.log("Hello")
-        return (
-            <Details/>
-        // return (
-        //     <div>
-        //         <p> {specialty} </p>
-        //     </div>
-        // )
-        //console.log('Hi i was clicked')
-        )
+        setHogDetails (!HogDetails) 
     }
-
+    console.log(HogDetails)
     return (
         <div>
             <h1>{name}
             <button onClick = {handleClick} 
             >See Details</button>
             </h1>
-                <Details/>
+            
             <img 
                 height= '200px'
                 alt = {name}
